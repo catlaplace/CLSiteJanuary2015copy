@@ -1,0 +1,830 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><style type="text/css">
+.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}.IconSpace {
+	font-size: xx-small;
+}
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=1200">
+<meta name="description" content="">
+
+<meta name="keywords" content="Science graphic Design  Illustration research article">
+
+
+<title>Catherine LAPLACE - Scientific illustration - Graphic Design</title>
+<link href="Scripts/all.css" rel="stylesheet" type="text/css">
+
+<script style="" src="Scripts/ga.js" async="" type="text/javascript"></script>
+<script type="text/javascript" src="Scripts/js"></script>
+<!--<script src="Scripts/main.js" type="text/javascript"></script>-->
+<script type="text/javascript" src="Scripts/jquery-1.js"></script>
+<script type="text/javascript" src="Scripts/jquery-ui-1.js"></script>
+<script type="text/javascript" src="Scripts/jquery_002.js"></script>
+<script type="text/javascript" src="Scripts/jquery_004.js"></script>
+<script type="text/javascript" src="Scripts/jquery.js"></script>
+
+<script type="text/javascript" src="Scripts/jquery_003.js"></script>
+<script type="text/javascript" src="Scripts/jquery_005.js"></script>
+<!--<link href="Scripts/css.css" rel="stylesheet" type="text/css"-->
+
+<style type="text/css">
+
+
+body {
+	background-color: #a39393;
+}
+body,td,th {
+	font-family: "Open Sans", sans-serif;
+}
+
+#linktowebsite {
+	color: #C30;
+}
+.Copyrights {
+	font-weight: bold;
+}
+</style>
+
+<script type="text/javascript">
+//-------------------------------------------------------
+//
+//					Main VARIABLES 
+//
+//-------------------------------------------------------
+var idProyectoHover='';
+var portfolioY=0;
+var autoscroll=false;
+var iOS = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false );
+var MSIE = ( navigator.userAgent.match(/MSIE/i) ? true : false );
+
+$(document).ready(function() { 
+	$('input, textarea').placeholder();
+	//variables globales
+	var $home=$('#home');
+	var $Print=$('#Print');
+	var $WebPage=$('#WebPage');
+	var $MorePage=$('#MorePage');
+	var $About=$('#About');
+	
+
+	var $fakeNav=$('#fakeNav');
+	var $nav=$('#nav');
+	
+	var $bgHome=$('#bgHome');
+	var $bgEstudio=$('#imagenesEstudio');
+	var $window=$(window);
+	
+	var windowHeight;
+	var windowWidth;
+	var bgHomeHeight;
+	var estudioTop;
+
+	/*function redimensionar(){
+		windowHeight = $window.height();
+		windowWidth=$window.width();
+		bgHomeHeight=1188;
+		if(bgHomeHeight>0 & bgHomeHeight< windowHeight){
+			$home.css({'width':windowWidth,'height':bgHomeHeight-20});
+		}
+		else{
+			$home.css({'width':windowWidth,'height':windowHeight});
+		}
+	
+		var imgEstudioHeight=$('#bgSmart').height();
+		if(imgEstudioHeight>0 & imgEstudioHeight< windowHeight){
+			$Print.css({'width':windowWidth,'height':imgEstudioHeight});
+		}
+		else{
+			$Print.css({'width':windowWidth,'height':windowHeight});
+		}
+	
+	
+		$Print.css({'width':windowWidth});
+		$About.css({'width':windowWidth,'height':windowHeight});
+		
+		var col=Math.floor((windowWidth-150)/190);
+		var ancho=col*190;
+		$listado.css({'width':ancho,'left':ancho/-2});
+		
+	}
+	$window.resize(function(){ //if the user resizes the window...
+		redimensionar();
+	});	
+
+*/
+
+
+//-------------------------------------------------------
+//
+//				SCROLL
+//
+//-------------------------------------------------------
+
+	var menuFijo=false;	
+	function fijarMenu(){
+		if(!menuFijo){
+			menuFijo=true;
+			$fakeNav.fadeOut('fast', function(){$nav.animate({top:0},'slow');});
+		}
+	}
+	function soltarMenu(){
+		if(menuFijo){
+			menuFijo=false;
+			$('.menu .botones-del-menu a').removeClass('selected');
+			$('#resalta').fadeOut(500);		
+			$nav.animate({top:-38},'100','easeOutQuad', function(){$fakeNav.fadeIn('slow');});
+		}
+	}
+	if(!iOS){
+		$window.scroll(function(){
+			var pos = $window.scrollTop();
+			if(!menuFijo & pos>38){fijarMenu();}
+			if(menuFijo & pos<=38){soltarMenu();}
+		});
+	}
+
+
+
+//-------------------------------------------------------
+//
+//				Print  POrtfolio
+//
+//-------------------------------------------------------
+	
+
+
+	
+	$('#PrintBasic').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'0%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-0%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print1').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-100%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-100%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print2').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-200%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-200%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print3').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-300%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-300%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print4').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-400%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-400%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print5').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-500%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-500%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print6').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-600%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-600%'} ,1800,'easeOutCubic');	
+	});
+	$('#Print7').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-700%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-700%'} ,1800,'easeOutCubic');	
+	});
+$('#Print8').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-800%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-800%'} ,1800,'easeOutCubic');	
+	});
+$('#Print9').click(function(){ 
+		$('#imagenesEstudio').stop().animate({'left':'-900%'} ,2300,'easeOutCubic');
+		$('#infoEstudio').stop().animate({'left':'-900%'} ,1800,'easeOutCubic');	
+	});
+
+
+///-------------------------------------------------------
+//
+//				web POrtfolio
+//
+//--------------------------------------------------------
+	
+	
+	$('#Web1').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'0%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-0%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web2').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-100%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-100%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web3').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-200%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-200%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web4').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-300%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-300%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web5').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-400%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-400%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web6').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-500%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-500%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web7').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-600%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-600%'} ,1800,'easeOutCubic');	
+	});
+	$('#Web8').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-700%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-700%'} ,1800,'easeOutCubic');	
+	});
+    $('#Web9').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-800%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-800%'} ,1800,'easeOutCubic');	
+	});
+    $('#Web10').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-900%'} ,2300,'easeOutCubic');
+		$('#winfoEstudio').stop().animate({'left':'-900%'} ,1800,'easeOutCubic');	
+	});
+	///-------------------------------------------------------
+//
+//				More
+//
+//--------------------------------------------------------
+	
+	
+	$('#More1').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'0%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-0%'} ,1800,'easeOutCubic');	
+	});
+	$('#More2').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-100%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-100%'} ,1800,'easeOutCubic');	
+	});
+	$('#More3').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-200%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-200%'} ,1800,'easeOutCubic');	
+	});
+	$('#More4').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-300%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-300%'} ,1800,'easeOutCubic');	
+	});
+	$('#More5').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-400%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-400%'} ,1800,'easeOutCubic');	
+	});
+	$('#More6').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-500%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-500%'} ,1800,'easeOutCubic');	
+	});
+	$('#More7').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-600%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-600%'} ,1800,'easeOutCubic');	
+	});
+	$('#More8').click(function(){ 
+		$('#wimagenesEstudio').stop().animate({'left':'-700%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-700%'} ,1800,'easeOutCubic');	
+	});
+    $('#More9').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-800%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-800%'} ,1800,'easeOutCubic');	
+	});
+    $('#More10').click(function(){ 
+		$('#mimagenesEstudio').stop().animate({'left':'-900%'} ,2300,'easeOutCubic');
+		$('#minfoEstudio').stop().animate({'left':'-900%'} ,1800,'easeOutCubic');	
+	});
+
+	
+	
+	//-------------------------------------------------------
+	//
+	//						PRINT
+	//
+	//-------------------------------------------------------
+	
+	
+	
+		
+	//menu
+	$('.botones-del-menu a').click(function(event){
+		event.preventDefault();
+		$this=$(this);
+		var clase=$this.attr('class');
+		var scrollToSelector= $this.attr('href');
+		
+		autoscroll=true;
+		var goto=$(scrollToSelector).position().top;
+		$('html,body').animate({scrollTop:goto}, 1200, 'easeOutCubic',function(){ autoscroll=false;});
+	
+	});
+	
+	// highlighing of the active button
+	$('.menu .botones-del-menu a').click(function(){
+		$('.menu .botones-del-menu a').removeClass('selected');
+		$this=$(this);
+		var clase=$this.attr('class');
+		if(clase!='boton-home'){
+			$('.'+clase).addClass('selected');
+			$('#resalta').animate({width: $this.width(),left: $this.position().left} , 1000);
+			$('#resalta').fadeIn(1000);
+		}
+		else{
+			$('#resalta').fadeOut(500);
+		}
+	});
+	
+	
+
+});
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+<script src="Scripts/commonmaputilmarker.js" charset="UTF-8" type="text/javascript"></script><script src="Scripts/onion.js" charset="UTF-8" type="text/javascript"></script><script src="Scripts/controlsstats.js" charset="UTF-8" type="text/javascript"></script></head>
+
+<!---------------------------------------------------------
+//
+//						PRINT
+//
+//---------------------------------------------------------><body onload="MM_preloadImages('Images/Print/PrintIcon.png','Images/Print/01IconB.png','Images/Print/02IconB.png','Images/Print/03IconB.png','Images/Print/04IconB.png','Images/Print/08IconB.png','Images/Print/05IconB.png','Images/Print/06IconB.png','Images/Print/07IconB.png','Images/Print/09IconB.png','Images/Web/01wIconB.png','Images/Web/02wIconB.png','Images/Web/03wIconB.png','Images/Web/04wIconB.png','Images/Web/05wIconB.png','Images/Web/06wIconB.png','Images/Web/07wIconB.png','Images/Web/08wIconB.png','Images/More/01mIcon.png')">
+    
+<div id="smartweb" style="">
+  <div id="nav" style="background: FFF repeat-x scroll 0% 0% transparent; top: 0px;">
+    <div class="menu">
+      <div style="width: 48px; left: 69px; display: block;" id="resalta"></div>  
+      <div class="botones-del-menu"> <a href="#home" class="boton-home">Home<img src="Icon.png" width="25" height="25" /></a> <a href="#Print" class="boton-portfolio selected">Print</a> <a href="#WebPage" class="boton-estudio">Web</a> <a href="#MorePage" class="boton-clientes">More</a> <a href="#About" class="boton-contacto">About Me</a> </div>
+      
+     
+    </div>
+<img src="Images/Cornerheader.png" width="195" height="181" /></div>
+
+  <div style="display: none;" id="fakeNav">
+    <div class="menu">
+      <div class="botones-del-menu"> <a href="#home" class="boton-home">Home</a> <a href="#Print" class="boton-portfolio selected">Print</a> <a href="#WebPage" class="boton-estudio">Web</a> <a href="#MorePage" class="boton-clientes">More</a> <a href="#About" class="boton-contacto">About Me</a> </div>
+            
+            
+    </div>
+  </div>
+  
+  <!--HOME -->
+  <div style="width: 1280px; height: 833px;" id="home">
+<img id="bgHome" class="keyimg" src="Images/Aspergillus.jpg" alt="Aspergillus.jpg" width="100%">
+  </div>
+  
+   <div class="AboutPicture">
+  
+  <p>&nbsp;</p>
+
+<a href="#" onclick="window.open('AboutPicture.html', 'a', 'width=460, height=50, scrollbars=0, resizable=0')">   About this picture</a> </p> 
+
+</div>  
+
+<div class="transicion-1"></div>
+  
+  
+  <!--Print-->
+  
+<div style="width: 1280px;height: 833px; " id="Print">
+    <h1 class="xl fuente-liviana color-secundario"><span class="xl2">Print</span></h1>
+    
+
+
+          
+   <div class="modulo-integrantes">
+      
+      <a id="PrintBasic" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image30','','Images/Print/PrintIcon.png',1)"><img src="Images/Print/PrintIconON.png" name="Image30" width="150" height="80" border="0" id="PrintBasic" /></a>
+      
+      <a id="Print1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image50','','Images/Print/01IconB.png',1)"><img src="Images/Print/01Icon.png" name="Image50" width="150" height="80" border="0" id="Print1" /></a> 
+      
+ <a id="Print2" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image35','','Images/Print/02IconB.png',1)"><img src="Images/Print/02Icon.png" name="Image35" width="150" height="80" border="0" id="Print2" /></a>
+ 
+ <a id="Print3" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image36','','Images/Print/03IconB.png',1)"><img src="Images/Print/03Icon.png" name="Image36" width="150" height="80" border="0" id="Print3" /></a>
+        
+    
+ 
+      <a id="Print4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image37','','Images/Print/04IconB.png',1)"> <img src="Images/Print/04Icon.png" alt="image27" name="Image37" width="150" height="80" border="0" id="Print4" /></a>
+       
+     <a id="Print8" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image8','','Images/Print/08IconB.png',1)"><img src="Images/Print/08Icon.png" name="Image8" width="150" height="80" border="0" id="Print8" /></a>  
+  
+                  
+      
+        
+       
+        
+        <a id="Print6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image39','','Images/Print/05IconB.png',1)"> <img src="Images/Print/05Icon.png" alt="image7" name="Image39" width="150" height="80" border="0" id="Print6" /></a>
+  
+        
+   
+        <a id="Print7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image40','','Images/Print/06IconB.png',1)"> <img src="Images/Print/06Icon.png" alt="image7" name="Image40" width="150" height="80" border="0" id="Print7" /></a> 
+            
+    
+    
+      <a id="Print5" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image38','','Images/Print/07IconB.png',1)"> <img src="Images/Print/07Icon.png" alt="image5" name="Image38" width="150" height="80" border="0" id="Print5" /></a>
+        
+    
+        <a id="Print9" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image43','','Images/Print/09IconB.png',1)"> <img src="Images/Print/09Icon.png" alt="image43" name="Image43" width="150" height="80" border="0" id="Print9" /></a>
+   
+    
+    
+  
+     
+  </div>
+  <!--  <div class="modulo-integrantes2">
+    </div>-->
+    
+    
+    <div class="conteiner">
+      <div id="imagenesEstudio"><img id="PrintBasic" src="Images/Print/Print.jpg" alt="PBasic" class="keyimg" width="100%"> <img id="Print1" src="Images/Print/Print1.jpg" alt="Print1" width="100%"> <img id="Print2" src="Images/Print/Print2.jpg" alt="Print2" width="100%" > <img id="Print3" src="Images/Print/Print3.jpg" alt=" Print3" width="100%" > <img id="Print4" src="Images/Print/Print4.jpg" alt="Print4" width="100%" > <img id="Print5" src="Images/Print/Print5.jpg" alt="Print5" width="100%" ><img id="Print6" src="Images/Print/Print6.jpg" alt="Print6" width="100%" ><img id="Print7" src="Images/Print/Print7.jpg" alt="Print7" width="100%"> <img id="Print8" src="Images/Print/Print8.jpg" alt="Print8" width="100%" ><img id="Print9" src="Images/Print/Print9.jpg" alt="Print9" width="100%">
+      </div>
+      
+      <div id="infoEstudio">
+        
+        <div class="modulo-info" id="infoPrintBasic">
+          <h2 class="color-primario l fuente-negrita">Development of insulitis in susceptible mice</h2><p> <br>
+Illustration for a book chapter.<br />Autoimmune Diabetes. Diane Mathis and Jason Gaglia.  Molecular Imaging, by Ralph Weissleder, Brian D Ross, Alnanawaz Rehemtull, Sanjiv Sam Gambhir. Pmph Usa; 1 st edition. April 30, 2009.</p>
+</div> 
+<div class="modulo-infolegend" id="infoPrintLegend">
+          <p> <br>  <br>
+ In mice of all strains, a ripple of β-cell death occurs physiologically approximately
+2 weeks of age. In susceptible mice, antigens derived from dead β-cells (shown in black) are taken up by dendritic cells (DCs) (blue cells) in the
+pancreatic islets (left), inducing their migration to the pancreatic lymph node (PLN) (right) with their maturation en route. In the PLN, the DCs
+present β-cell-derived antigens to naive β-cell-reactive T cells (green cells) in circulation and activate them. Upon recognition of major histocompatibility
+complex molecule-β-cell peptide complexes, the naive T cells become activated (red cells), acquiring the ability to migrate through
+the tissues. In the islets, the activated T cells re-encounter cognate antigen are retained and become reactivated, thus initiating insulitis.
+</p>
+</div> 
+        
+     
+        
+        <div class="modulo-info" id="infoPrint1">
+          <h2 class="color-primario l fuente-negrita">Ischemic Colitis</h2><p>&nbsp;</p>
+          <p>Schematic illustration depicting the mechanism of ischemic colitis.</p>
+          
+        </div>
+        
+        <div class="modulo-info" id="infoPrint2">
+          <h2 class="color-primario l fuente-negrita">Symbolic representation of immunological tolerance</h2><br> <p>Book cover.</p>
+          <p>"Immune  Tolerance". Subject collection from Cold Spring Harbor. Perspectives in Biology. Edited by Diane Mathis and Alexander Rudensky. (June 30, 2013)</p>
+          
+        </div>
+        
+        <div class="modulo-info" id="infoPrint3">
+          <h2 class="color-primario l fuente-negrita">The Small/Medium/Large test strategy</h2><br>
+Figure for the article<br />"Finding more than one worm in the apple", Mike Bland,<br> Communications of the ACM, Volume 57 Issue 7, July 2014 Pages 58-64. Illustration based on a sketch from the author.<br>
+          </p>
+</div>  
+ <div class="modulo-info" id="infoPrint4">
+          <h2 class="color-primario l fuente-negrita">Cellular and metabolic alterations in adipose tissue during obesity</h2><p>&nbsp;</p>
+          <p>Illustration for the article  " Tissular Tregs : a unique population of adipose-tissue-resident Foxp3+ CD4+ T cells that impacts organismal metabolism."  Cipolletta D et al. Semin Immunol. 2011 Dec;23(6):431-7.
+          </p>
+</div>  
+
+ <div class="modulo-info" id="infoPrint5">
+          <h2 class="color-primario l fuente-negrita">Article Illustration </h2><p>&nbsp;</p>
+          <p>
+For the article "Thymic negative selection is functional in NOD mice." Mingueneau M, Jiang W, Feuerer M, Mathis D, Benoist C.
+J Exp Med. 2012 Feb 13.</p>
+</div> 
+
+ <!--<div class="modulo-infolegend" id="infoPrintLegend5">
+          <p><br /> 
+Proposed model outlining the differential signaling abilities of NOD and B6 alpha beta TCRs to promote alpha beta and gamma delta lineage commitment, when expressed at the DN stage. 
+</p>
+</div>  -->
+
+
+
+ <div class="modulo-info" id="infoPrint6">
+          <h2 class="color-primario l fuente-negrita">Cover proposal</h2><p>&nbsp;</p>
+          <p>Illustration related to the article :<br />"A special population of regulatory T cells potentiates muscle repair."
+Burzyn D, Kuswanto W, Kolodin D, Shadrach JL, Cerletti M, Jang Y, Sefik E, Tan TG, Wagers AJ, Benoist C, Mathis D.
+Cell. 2013 Dec 5;155(6):1282-95.
+          </p>
+</div>  
+<div class="modulo-info" id="infoPrint7">
+          <h2 class="color-primario l fuente-negrita">Characterizing the variation in T cell response</h2><br /><br />
+          <p>Graphical abstract.<br />
+          For the article "Intersection of population variation and autoimmunity genetics in human T cell activation."
+Ye CJ et al. Science. 2014 Sep 12;345(6202):1254665.
+          </p>
+</div>  
+<div class="modulo-info" id="infoPrint8">
+          <h2 class="color-primario l fuente-negrita">Aire</h2><p></p><p>&nbsp;</p>
+          <p> Illustration, <br />For the review article : "AIRE"<br />Mathis D, Benoist C. Annu Rev Immunol. 2009;27:287-312. 
+          </p>
+</div>  
+<div class="modulo-info" id="infoPrint9">
+          <h2 class="color-primario l fuente-negrita">Cover proposal</h2><p>&nbsp;</p>
+          <p>Illustration related to the article :<br />"How Punctual Ablation of Regulatory T Cells Unleashes an Autoimmune Lesion within the Pancreatic Islets."
+Feuerer M, Shen Y, Littman DR, Benoist C, Mathis D.Immunity. 2009 Oct 16;31(4):654-64. 
+          </p>
+</div>  
+        
+        
+    </div>
+  </div>
+</div>
+<div class="transicion-2"></div>
+  
+  <!--WEB -->
+  <div style="width: 1285px; height: 837px;" id="WebPage">
+    <h1 class="xl fuente-liviana color-secundario">Web</h1>
+            
+   <div class="modulo-integrantes">
+      
+      <a id="Web1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image51','','Images/Web/01wIconB.png',1)"><img src="Images/Web/01wIcon.png" name="Image51" width="150" height="80" border="0" id="Web1" /></a>
+      
+      <a id="Web2" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image52','','Images/Web/02wIconB.png',1)"><img src="Images/Web/02wIcon.png" name="Image52" width="150" height="80" border="0" id="Web2" /></a>
+       
+       <p class="IconSpace"> </p>
+       
+  <a id="Web3" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Web31','','Images/Web/03wIconB.png',1)"><img src="Images/Web/03wIcon.png" name="Web31" width="150" height="80" border="0" id="Web31" /></a>
+                  
+        <a id="Web4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image54','','Images/Web/04wIconB.png',1)"><img src="Images/Web/04wIcon.png" name="Image54" width="150" height="80" border="0" id="Web2" /></a>
+        
+     <p class="IconSpace"> </p>
+        
+       
+        <a id="Web5" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image55','','Images/Web/05wIconB.png',1)"><img src="Images/Web/05wIcon.png" name="Image55" width="150" height="80" border="0" id="Web5" /></a>
+                  
+        <a id="Web6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image56','','Images/Web/06wIconB.png',1)"><img src="Images/Web/06wIcon.png" name="Image56" width="150" height="80" border="0" id="Web6" /></a>
+        
+  <p class="IconSpace"> </p>
+        
+        
+        <a id="Web7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image57','','Images/Web/07wIconB.png',1)"><img src="Images/Web/07wIcon.png" name="Image57" width="150" height="80" border="0" id="Web7" /></a>
+                  
+ <a id="Web8" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image58','','Images/Web/08wIconB.png',1)"><img src="Images/Web/08wIcon.png" name="Image58" width="150" height="80" border="0" id="Web8" /></a>
+        
+     <!--      <p class="IconSpace"> </p> 
+    
+     <a id="Web9" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image59','','Images/Web/09wIconB.png',1)"><img src="Images/Web/09wIcon.png" name="Image59" width="150" height="80" border="0" id="Web9" /></a>
+                  
+        <a id="Web10" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image60','','Images/Web/10wIconB.png',1)"><img src="Images/Web/10wIcon.png" name="Image60" width="150" height="80" border="0" id="Web10" /></a>
+    
+     <p class="IconSpace"> </p> 
+    -->
+    
+  
+     
+  </div>
+  
+    
+    
+    <div class="wconteiner">
+      <div id="wimagenesEstudio"><img id="Web1" src="Images/Web/Web1.jpg" alt="web1" width="100%" ><img id="Web2" src="Images/Web/Web2.jpg" alt="Web2" width="100%"><img id="Web3" src="Images/Web/Web3.jpg" alt="web3" width="100%" ><img id="Web4" src="Images/Web/Web4.jpg" alt="Web4" width="100%"><img id="Web5" src="Images/Web/Web5.jpg" alt="web5" width="100%" ><img id="Web6" src="Images/Web/Web6.jpg" alt="Web6" width="100%"><img id="Web7" src="Images/Web/Web7.jpg" alt="web7" width="100%" ><img id="Web8" src="Images/Web/Web8.jpg" alt="Web8" width="100%"> <img id="Web9" src="Images/Web/Web9.jpg" alt="web9" width="100%" ><img id="Web10" src="Images/Web/Web10.jpg" alt="Web10" width="100%">
+      </div>
+      
+      <div id="winfoEstudio">
+        
+        <div class="modulo-info" id="infoWeb1">
+          <h2 class="color-primario l fuente-negrita"></a><br>ImmGen<br></h2><p>&nbsp;</p><p>Immunological Genome Project. Website design and implementation. </p><br>
+         <p><a href="http://www.immgen.org/" " target="_blank">    <span id="linktowebsite">Website</span></a> </p>
+        
+       </div> 
+        
+     
+        
+        <div class="modulo-info" id="infoWeb2">
+          <h2 class="color-primario l fuente-negrita">ImmGen app</h2><p>&nbsp;</p>
+         Immunological Genome Project. Databrowser app. <br>User interface Design. </p><br>
+         <p><a href="http://www.immgen.org/" " target="_blank">    <span id="linktowebsite">Website</span></a> </p>
+          <p><a href="https://itunes.apple.com/us/app/immgen/id378703882?mt=8" " target="_blank">    <span id="linktowebsite">ITune Store</span></a> </p>
+        
+          
+        </div>
+        
+        <div class="modulo-info" id="infoWeb3">
+          <h2 class="color-primario l fuente-negrita">CBDM Lab</a><br><br></h2><p>Website design and implementation. <br>Benoist-Mathis Laboratory (Harvard Medical School)</p><br>
+         <p><a href="http://cbdm.hms.harvard.edu/" " target="_blank">    <span id="linktowebsite">Website</span></a> </p>
+          
+        </div>
+        
+        <div class="modulo-info" id="infoWeb4">
+          <h2 class="color-primario l fuente-negrita"></a><br>"Mouse2"<br></h2><p><p>&nbsp;</p>User interface Design.<br> “Mouse2“ transgenic mouse management software.</p>
+         
+         
+</div> 
+ 
+ <div class="modulo-info" id="infoWeb5">
+          <h2 class="color-primario l fuente-negrita">Division of Immunology</h2><p>&nbsp;</p>
+          <p>Website Design and implementation</p><br>
+          <p><a href="http://immdiv.hms.harvard.edu/" " target="_blank">    <span id="linktowebsite">Website</span></a> </p>
+
+          
+</div>  
+
+ <div class="modulo-info" id="infoWeb6">
+          <h2 class="color-primario l fuente-negrita">Online test preparation</h2><p>&nbsp;</p>
+          <p>A series of mathematical graphs and diagrams for online test preparation (Kaplan). 
+          </p>
+</div>  
+ <div class="modulo-info" id="infoWeb7">
+          <h2 class="color-primario l fuente-negrita">Flow Cytometry Core Facility</h2><p>&nbsp;</p>
+          <p>Website Design and implementation</p><br>
+          <p><a href="http://immdiv.hms.harvard.edu/FlowCore/Flowcore.html/" " target="_blank">    <span id="linktowebsite">Website</span></a> </p>
+          </p>
+</div>  
+<div class="modulo-info" id="infoWeb8">
+          <h2 class="color-primario l fuente-negrita">This portfolio</h2><p>&nbsp;</p>
+          <p>Website Design and implementation<br><br>(with some technical inspiration from !Smart Grupo Creativo) <br>
+The main image is a microscopic view of spores from the fungus "Aspergillus fumigatu" (Cotton bluestaining) Picture taken  by myself in a microbiology class.<br>
+          </p>
+</div>  
+ <div class="modulo-info" id="infoWeb9">
+          <h2 class="color-primario l fuente-negrita">web 9</h2><p>&nbsp;</p>
+          <p>Adobe Illustrator<br><br>
+bla<br>
+          </p>
+</div>  
+<div class="modulo-info" id="infoWeb10">
+          <h2 class="color-primario l fuente-negrita">web 10</h2><p>&nbsp;</p>
+          <p>Adobe Illustrator<br><br>
+bla<br>
+          </p>
+</div>  
+        
+        
+    </div>
+  </div>
+</div>
+  <div class="transicion-3"></div>
+  
+ <!-- <More>-->
+  <div style="width: 1285px; height: 837px;" id="MorePage">
+    <h1 class="xl fuente-liviana color-secundario"><span class="xl2">More</span></h1>
+            
+   <div class="modulo-integrantes">
+  
+     
+      <a id="More1" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image71','','Images/More/01mIconB.png',1)"><img src="Images/More/01mIcon.png" name="Image71" width="150" height="80" border="0" id="More1" /></a>
+      
+      <a id="More2" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image72','','Images/More/02mIconB.png',1)"><img src="Images/More/02mIcon.png" name="Image72" width="150" height="80" border="0" id="More2" /></a>
+       
+       <p class="IconSpace"> </p>
+       
+  <a id="More3" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image73','','Images/More/03mIconB.png',1)"><img src="Images/More/03mIcon.png" name="Image73" width="150" height="80" border="0" id="More3" /></a>
+                  
+        <a id="More4" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image74','','Images/More/04mIconB.png',1)"><img src="Images/More/04mIcon.png" name="Image74" width="150" height="80" border="0" id="More2" /></a>
+        
+        <p class="IconSpace"> </p>
+        
+       
+        <a id="More5" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image75','','Images/More/05mIcon.png',1)"><img src="Images/More/05mIconB.png" name="Image75" width="150" height="80" border="0" id="More5" /></a>
+                  
+        <a id="More6" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image76','','Images/More/06mIcon.png',1)"><img src="Images/More/06mIconB.png" name="Image76" width="150" height="80" border="0" id="More6" /></a>
+        
+  <!--<p class="IconSpace"> </p>
+        
+        
+        <a id="More7" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image77','','Images/More/07mIcon.png',1)"><img src="Images/More/07mIconB.png" name="Image77" width="150" height="80" border="0" id="More7" /></a>
+                  
+        <a id="More8" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image78','','Images/More/08mIcon.png',1)"><img src="Images/More/08mIconB.png" name="Image78" width="150" height="80" border="0" id="More8" /></a>
+        
+    <p class="IconSpace"> </p> 
+    
+     <a id="More9" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image79','','Images/More/09mIcon.png',1)"><img src="Images/More/09mIconB.png" name="Image79" width="150" height="80" border="0" id="More9" /></a>
+                  
+        <a id="More10" onmouseout="MM_swapImgRestore()" onmouseover="MM_swapImage('Image80','','Images/More/10mIcon.png',1)"><img src="Images/More/10mIconB.png" name="Image80" width="150" height="80" border="0" id="More10" /></a>
+    
+     <p class="IconSpace"> </p> 
+    
+    
+  -->
+     
+  </div>
+  <!--  <div class="modulo-integrantes2">
+    </div>-->
+    
+    
+    <div class="mconteiner">
+      <div id="mimagenesEstudio"><img id="More1" src="Images/More/More1.jpg" alt="More1" width="100%" ><img id="More2" src="Images/More/More2.jpg" alt="More2" width="100%"><img id="More3" src="Images/More/More3.jpg" alt="More3" width="100%" ><img id="Web4" src="Images/More/More4.jpg" alt="More4" width="100%"><img id="More5" src="Images/More/More5.jpg" alt="More5" width="100%" ><img id="More6" src="Images/More/More6.jpg" alt="More6" width="100%"><img id="More7" src="Images/More/More7.jpg" alt="More7" width="100%" ><img id="More8" src="Images/More/More8.jpg" alt="More8" width="100%"> <img id="More9" src="Images/More/More9.jpg" alt="More9" width="100%" ><img id="Web10" src="Images/More/More10.jpg" alt="More10" width="100%">
+      </div>
+      
+      <div id="minfoEstudio">
+        
+        <div class="modulo-info" id="infoMore1">
+          <h2 class="color-primario l fuente-negrita">Cover proposal</h2><p>&nbsp;</p>
+          	<p>Illustration related to the article :<br />"Foxp3 Transcription-Factor-Dependent and -Independent Regulation of the Regulatory T Cell Transcriptional Signature." Hill JA, Feuerer M, Tash K, Haxhinasto S, Perez J, Melamed R, Mathis D, Benoist C. Immunity. 2007 Nov;27(5):786-800. </p>
+         
+       </div> 
+        
+     
+        
+        <div class="modulo-info" id="infoMore2">
+          <h2 class="color-primario l fuente-negrita">Dali-Inspired rendition of a microarray</h2><p>&nbsp;</p>
+          	<p>Illustration related to the article :<br />"Foxp3 Transcription-Factor-Dependent and -Independent Regulation of the Regulatory T Cell Transcriptional Signature." Hill JA, Feuerer M, Tash K, Haxhinasto S, Perez J, Melamed R, Mathis D, Benoist C. Immunity. 2007 Nov;27(5):786-800. </p>
+        </div>
+        
+        <div class="modulo-info" id="infoMore3">
+          <h2 class="color-primario l fuente-negrita">"Gene of the Year"</h2><p>&nbsp;</p>
+          <p>"Time magazine style" illustration of the gene requested the most thoughout 2014 using ImmGen databrowsers. </p>
+          
+        </div>
+        
+        <div class="modulo-info" id="infoMore4">
+          <h2 class="color-primario l fuente-negrita">X Ray scan</h2><p>&nbsp;</p>
+          <p> Illustration proposal for the article "Finding more than one worm in the apple", Mike Bland,<br> Communications of the ACM, Volume 57 Issue 7, July 2014 Pages 58-64.<br>
+          </p>
+</div>  
+ <div class="modulo-info" id="infoMore5">
+          <h2 class="color-primario l fuente-negrita">Cell components</h2><p>&nbsp;</p>
+          <p> <br><br>
+<br>
+          </p>
+</div>  
+
+ <div class="modulo-info" id="infoMore6">
+          <h2 class="color-primario l fuente-negrita">Immune cells as meteorites</h2><p>&nbsp;</p>
+          <p> <br><br>
+<br>
+          </p>
+</div>  
+ <div class="modulo-info" id="infoMore7">
+          <h2 class="color-primario l fuente-negrita">More 7</h2><p>&nbsp;</p>
+          <p> <br><br>
+bla<br>
+          </p>
+</div>  
+<div class="modulo-info" id="infoMore8">
+          <h2 class="color-primario l fuente-negrita">More 8</h2><p>&nbsp;</p>
+          <p> <br><br>
+Blabla<br>
+          </p>
+</div>  
+ <div class="modulo-info" id="infoMore9">
+          <h2 class="color-primario l fuente-negrita">More 9</h2><p>&nbsp;</p>
+          <p> <br><br>
+bla<br>
+          </p>
+</div>  
+<div class="modulo-info" id="infoMore10">
+          <h2 class="color-primario l fuente-negrita">More 10</h2><p>&nbsp;</p>
+          <p> <br><br>
+bla<br>
+          </p>
+</div>  
+        
+        
+    </div>
+  </div>
+</div>
+  <div class="transicion-4"></div>
+  
+  <!--CONTACTO -->
+  <div style="width: 1285px; height: 980px;" id="About">
+    <h1 class="xl fuente-liviana color-secundario">About Me</h1>
+    <img id="bgHome" class="keyimg" src="Images/Aspergillus3.jpg" alt="Aspergillus.jpg" width="100%"><!--<div style="height: 100%; width: 100%; position: relative; background-color: rgb(163, 147, 147); overflow: hidden;" >-->
+   <div class="Aboutme-text" id="Aboutme text">
+          
+<p>I combine a PhD in Biological and Medical Sciences with Graphic Design Skills.</p>
+<p>As a postdoctoral fellow, I have developed mouse models to decipher causes and triggers of bone diseases such as osteoporosis and osteoarthritis. While doing research, I attended continuing education at the School of Museum of Fine Arts, and completed a Certificate of Graphic Design. </p>
+<p>In 2006 I decided to leave the bench and join the research team of Dr. Benoist and Dr. Mathis, at Harvard Medical School as a scientific illustrator and web designer. My responsibilities involve creating strong visuals, graphs and illustrations to support scientific publications, user interfaces and websites, aimed at both scientific and non scientific audiences. </p>
+<p>Painting has been a hobby of mine for a few years now. You can have a glimpse <a href="Paintings2.html" title="Paintings" target="_blank">here</a>.</p>
+<p>&nbsp;</p>
+
+<p>
+  
+ 
+ 
+  </p>
+<div class="ContactMeText">
+  <a href="mailto:contact@catherinelaplace.com"><img src="Images/Email.png" alt=" " name="mIcon" width="10" height="8" id="MailIcon">    Contact me</a><br>
+  
+  <a href="http://www.linkedin.com/pub/catherine-laplace/0/288/b71/" target="_blank"><img src="Images/LinkedInIcon.png" alt=" " name="LIcon" width="10" height="10" class="keyimg" id="LIcon">    Linkedin</a><br>
+  
+  
+
+<a href="#" onclick="window.open('ElanceProfile.html', 'a', 'width=300, height=360, scrollbars=0, resizable=0')"><img src="Images/ElanceIcon.jpg" alt=" " name="aIcon" width="33" height="10"  id="Icon">   Elance</a> </p> 
+
+ <a href="CVnocontactinfoImage.pdf" target="_blank"><img src="Images/VisResumeIcon.png" alt=" " name="VisREsume" width="28" height="28" class="keyimg" id="VIcon"> Resume</a>
+
+</div>  
+ 
+</div>
+    <img src="Me.png" name="me" width="118" height="120" class="Mepicture" id="me" />
+
+    
+    
+<div class="Copyrights"> Copyrights 2014 Catherine Laplace
+</p>
+</div>  
+<!--</div class="Copyrights2">  <a href="CVnocontactinfoImage.pdf" target="_blank"><img src="Images/VisResumeIcon.png" alt=" " name="VisREsume" width="45" height="46" class="keyimg" id="VIcon"> Resume</a>
+
+</p>
+</div> --> 
+</body></html>
