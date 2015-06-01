@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><style type="text/css">
+.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}.IconSpace {
+	font-size: xx-small;
+}
+
+</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=1200">
+<meta name="description" content="Cell portrait project:  A series of digital rendering of  immune cells">
+
+<meta name="keywords" content="Science graphic Design  Illustration research article">
+
+
+<title>Catherine LAPLACE - Scientific illustration - Graphic Design</title>
+<link href="Scripts/Cellsl.css" rel="stylesheet" type="text/css">
+<link href="Scripts/all.css" rel="stylesheet" type="text/css">
+
+
+
+<style type="text/css"></style>
+
+<script language="JavaScript">
+<!-- 
+var interval = 20000; 
+var random_display = 0;
+var image_dir = "Images/Cells/"
+var ImageNum = 0;
+imageArray = new Array();
+imageArray[ImageNum++] = new imageItem(image_dir + "01.jpg");
+imageArray[ImageNum++] = new imageItem(image_dir + "02.jpg");
+imageArray[ImageNum++] = new imageItem(image_dir + "03.jpg");
+
+var number_of_image = imageArray.length;
+function imageItem(image_location) {
+this.image_item = new Image();
+this.image_item.src = image_location;
+}
+function get_ImageItemLocation(imageObj) {
+return(imageObj.image_item.src)
+}
+function randNum(x, y) {
+var range = y - x + 1;
+return Math.floor(Math.random() * range) + x;
+}
+function getNextImage() {
+if (random_display) {
+ImageNum = randNum(0, number_of_image-1);
+}
+else {
+ImageNum = (ImageNum+1) % number_of_image;
+}
+var new_image = get_ImageItemLocation(imageArray[ImageNum]);
+return(new_image);
+}
+
+function getPrevImage() {
+ImageNum = (ImageNum-1) % number_of_image;
+var new_image = get_ImageItemLocation(imageArray[ImageNum]);
+return(new_image);
+}
+
+function prevImage(place) {
+var new_image = getPrevImage();
+document[place].src = new_image;
+}
+
+function rotateImage(place) {
+var new_image = getNextImage();
+document[place].src = new_image;
+var recur_call = "rotateImage('"+place+"')";
+timerID = setTimeout(recur_call, interval);
+}
+
+
+//   -->
+</script>
+</head>
+
+
+
+</style>
+
+
+<style type="text/css">
+<!--
+body {
+	background-color: #a39393;
+}
+-->
+</style></head>
+
+
+    
+    
+  
+  <!--CONTACTO -->
+  <a href="Index.html" target="_blank"><img src="Images/Cornerheader.png" width="195" height="181" /></a>
+    <div class="Title"> Cell Portraits
+</div>
+  <div class="CellPortraitstext" id="CellPortraitstext">
+    <p>A series of digital cell "portraits" of immune cells. </p>
+    <p> Original immunofluorescence pictures courtesy of Kushragra Bansal and Hideyuki Yoshida. </p>
+
+  </div>
+    
+  
+    
+<div class="Copyrights3"> Copyrights 2015 Catherine Laplace
+
+</div>  
+<div class="Show">
+ 
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+	<td class="td" align=center>
+	  <!--<p><a href="#" onClick="rotateImage('rImage')">> play slideshow</a>&nbsp;&nbsp;<a href="#" onClick="clearTimeout(timerID)">|| pause slideshow</a><br>-->
+    <a href="#" onClick="prevImage('rImage'); clearTimeout(timerID)"><< previous </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onClick="rotateImage('rImage'); clearTimeout(timerID)"> next >></a><br><br></td>
+</tr>
+<tr>
+	<td class="td" align=center><img name="rImage" src="Images/Cells/01.jpg" width=880 height=880 border=0>
+<p></td>
+</tr>
+</table>
+</div>
+</div>
+<div class="PlaceHolder">
+</div>
+<span class="CellPortraitstext"><img src="Images/CellIcon.png" alt="Cell" width="110" height="100" class="CellIcon" /></span>
+</body></html>

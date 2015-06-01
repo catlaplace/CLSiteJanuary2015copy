@@ -65,6 +65,7 @@ $(document).ready(function() {
 	var $WebPage=$('#WebPage');
 	var $MorePage=$('#MorePage');
 	var $About=$('#About');
+	var $Cells=$('#Cells');
 	
 
 	var $fakeNav=$('#fakeNav');
@@ -353,9 +354,14 @@ function MM_swapImage() { //v3.0
   var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
    if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
 }
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
 </script>
 <script src="Scripts/commonmaputilmarker.js" charset="UTF-8" type="text/javascript"></script><script src="Scripts/onion.js" charset="UTF-8" type="text/javascript"></script><script src="Scripts/controlsstats.js" charset="UTF-8" type="text/javascript"></script></head>
 
+
+ 
 <!---------------------------------------------------------
 //
 //						PRINT
@@ -366,18 +372,19 @@ function MM_swapImage() { //v3.0
   <div id="nav" style="background: FFF repeat-x scroll 0% 0% transparent; top: 0px;">
     <div class="menu">
       <div style="width: 48px; left: 69px; display: block;" id="resalta"></div>  
-      <div class="botones-del-menu"> <a href="#home" class="boton-home">Home<img src="Icon.png" width="25" height="25" /></a> <a href="#Print" class="boton-portfolio selected">Print</a> <a href="#WebPage" class="boton-estudio">Web</a> <a href="#MorePage" class="boton-clientes">More</a> <a href="#About" class="boton-contacto">About Me</a> </div>
-      
-     
-    </div>
-<img src="Images/Cornerheader.png" width="195" height="181" /></div>
+      <div class="botones-del-menu"> <a href="#home" class="boton-home">Home<img src="Icon.png" width="25" height="25" /></a> <a href="#Print" class="boton-portfolio selected">Print</a> <a href="#WebPage" class="boton-estudio">Web</a> <a href="#MorePage" class="boton-clientes">More</a> <a href="#About" class="boton-contacto">About Me</a></div>
+     <div class="CellPortraits"><a href="cellPortraits.html" target="_blank"><img src="Images/CelportraitIcon.png" width="74" height="67" /></a><div class="CellLinkText" onfocus="MM_openBrWindow('CellPortraits.html','CellPortraits','scrollbars=yes')">Cell portraits</div> 
+      </div>
 
-  <div style="display: none;" id="fakeNav">
+ 
+</div> 
+<img src="Images/Cornerheader.png" width="195" height="181" /></a> 
+</div>  
+<div style="display: none;" id="fakeNav">
     <div class="menu">
       <div class="botones-del-menu"> <a href="#home" class="boton-home">Home</a> <a href="#Print" class="boton-portfolio selected">Print</a> <a href="#WebPage" class="boton-estudio">Web</a> <a href="#MorePage" class="boton-clientes">More</a> <a href="#About" class="boton-contacto">About Me</a> </div>
             
-            
-    </div>
+  </div>
   </div>
   
   <!--HOME -->
@@ -392,6 +399,12 @@ function MM_swapImage() { //v3.0
 <a href="#" onclick="window.open('AboutPicture.html', 'a', 'width=460, height=50, scrollbars=0, resizable=0')">   About this picture</a> </p> 
 
 </div>  
+
+
+</div>
+
+
+
 
 <div class="transicion-1"></div>
   
@@ -805,7 +818,9 @@ bla<br>
 <div class="ContactMeText">
   <a href="mailto:contact@catherinelaplace.com"><img src="Images/Email.png" alt=" " name="mIcon" width="10" height="8" id="MailIcon">    Contact me</a><br>
   
-  <a href="http://www.linkedin.com/pub/catherine-laplace/0/288/b71/" target="_blank"><img src="Images/LinkedInIcon.png" alt=" " name="LIcon" width="10" height="10" class="keyimg" id="LIcon">    Linkedin</a><br>
+  <a href="http://www.linkedin.com/pub/catherine-laplace/0/288/b71/" target="_blank"><img src="Images/LinkedInIcon.png" alt=" " name="LIcon" width="10" height="10" class="keyimg" id="LIcon">    LinkedIn</a><br>
+  
+  <a href="https://twitter.com/CatLaplace" target="_blank"><img src="Images/Twit.png" alt=" " name="Twitter" width="10" height="10" class="keyimg" id="TIcon">    Twitter</a><br>
   
   
 

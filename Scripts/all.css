@@ -15,7 +15,11 @@ a img{
 	font-size: xx-small;
 }.ui-helper-clearfix:after{clear:both;content:".";display:block;height:0px;visibility:hidden}.ui-helper-clearfix{display:inline-block}* html .ui-helper-clearfix{height:1%}.ui-helper-clearfix{display:block}.color-primario{color:#424242}.color-secundario{color:#FFF}.fondo-primario{
 	background-color:#000
-}.fondo-secundario{background-color:rgba(0,0,0,0.2)}.fuente-liviana{font-weight:300}.fuente-negrita{
+}.fondo-secundario{background-color:rgba(0,0,0,0.2)}
+
+.fuente-liviana{font-weight:300}
+
+.fuente-negrita{
 	font-weight:600;
 	color: #333;
 }
@@ -136,7 +140,10 @@ div.menu{
 	z-index:1;
 	position:relative;
 	overflow:hidden;
-}#MorePage{background:z-index:1;position:relative;overflow:hidden}.transicion-1{height:0px;width:100%;display:block;position:relative}.transicion-2{height:0px;width:100%;display:block;}.transicion-3{height:0px;width:100%;display:block;position:relative}.transicion-4{height:0px;width:100%;display:block;position:relative}
+	
+}
+
+#MorePage{background:z-index:1;position:relative;overflow:hidden}.transicion-1{height:0px;width:100%;display:block;position:relative}.transicion-2{height:0px;width:100%;display:block;}.transicion-3{height:0px;width:100%;display:block;position:relative}.transicion-4{height:0px;width:100%;display:block;position:relative}
 
 
 
@@ -284,9 +291,59 @@ font-weight: bold;
 	color: #330000;
 	font-family: "Century Gothic";
 	text-align: justify;
+}
+.CellPortraits{
+	position:absolute;
+	padding:0px 0 0px 0px;
+	top:2px;
+	font-size:16px;
+	left: 611px;
+	z-index:9;
+	
+	
+}
+.CellLinkText{
+	position:absolute;
+	padding:0px 0 0px 0px;
+	top:69px;
+	font-size:16px;
+	left: -11px;
+	z-index:9;
+	font-family: "Century Gothic";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	text-align:;
+	height: 29px;
+	width: 108px;
+	color: #200000;
+	font-size: 16px;
+	font-weight: normal;
 
 	
 }
+
+
 
 .Copyrights{
 position:absolute;
