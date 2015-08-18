@@ -224,16 +224,17 @@ modulo-integrantes2{position:absolute;display:block;padding:20px;width:139px;hei
 	width:490px;
 	height:300px;
 	top:160px;
-	font-size:13px;
-	line-height:20px;
+	font-size:12px;
+	line-height:17px;
 	left: 185px;
 	padding:0px 0 20px 15px;
 	z-index:9;
 	color: #330000;
 	font-family: "Century Gothic";
 	text-align: justify;
-	
 	}
+	
+
 	
 .Oneliner{
 	display:block;
@@ -299,7 +300,30 @@ font-weight: bold;
 	font-size:16px;
 	left: 611px;
 	z-index:9;
+}
+
+.PaintingsLink{
+	position:absolute;
+	padding:0px 0 0px 0px;
+	top:66px;
+	font-size:10px;
+	left: 665px;
+	color: #330000;
+	font-family: "Century Gothic";
+	z-index:9;
+	width: 93px;
 	
+}
+
+.PaintingsLink2{
+	position:absolute;
+	padding:0px 0 0px 0px;
+	top:102px;
+	font-size:10px;
+	left: 611px;
+	color: #330000;
+	font-family: "Century Gothic";
+	z-index:9;
 	
 }
 .CellLinkText{
@@ -310,49 +334,22 @@ font-weight: bold;
 	left: -11px;
 	z-index:9;
 	font-family: "Century Gothic";
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	text-align:;
 	height: 29px;
 	width: 108px;
 	color: #200000;
 	font-size: 16px;
 	font-weight: normal;
-
-	
-}
-
+	}
 
 
 .Copyrights{
-position:absolute;
-	
+	position:absolute;
 	width:420px;
 	height:300px;
 	top:815px;
 	font-size:10px;
-	left: 705px;
+	left: 185px;
 	padding:0px 0 20px 15px;
 	z-index:9;
 	color: #330000;

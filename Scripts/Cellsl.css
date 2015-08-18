@@ -2,9 +2,9 @@
 	position:absolute;
 	width:204px;
 	height:12px;
-	top:1016px;
+	top:913px;
 	font-size:10px;
-	left: 808px;
+	left: 674px;
 	padding:0px 0 0px 0px;
 	z-index:10;
 	color: #DEDEDE;
@@ -17,9 +17,9 @@
 	position:absolute;
 	width:300px;
 	height:55px;
-	top:20px;
+	top:26px;
 	font-size:45px;
-	left: 240px;
+	left: 213px;
 	padding:0px 0 0px 0px;
 	z-index:9;
 	color: #330000;
@@ -30,12 +30,12 @@
 	{
 	display:block;
 	position:absolute;
-	width:584px;
+	width:518px;
 	height:54px;
-	top:84px;
+	top:97px;
 	font-size:13px;
 	line-height:20px;
-	left: 240px;
+	left: 206px;
 	padding:0px 0 0px 0px;
 	z-index:9;
 	color: #330000;
@@ -43,29 +43,60 @@
 	text-align: justify;
 	}
 	
+	
+	.Homelink
+	{
+	display:block;
+	position:absolute;
+	width:50px;
+	height:0px;
+	top:194px;
+	left: 25px;
+	z-index:9;
+	color: #FC0;
+	font-family: "Century Gothic";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: 4px;
+	font-variant: normal;
+	text-decoration: blink;
+	text-transform: capitalize;
+	}
+	
 	.CellIcon{
 	position:absolute;
 	width:110px;
 	height:100px;
-	top:-41px;
-	left: 664px;
+	top:-40px;
+	left: 568px;
 	}	
 	
 	.Show{
 	position:absolute;
-	width:850px;
-	height:850px;
+	width:750px;
+	height:750px;
 	top:154px;
 	left: 138px;
 	font-family: "Century Gothic";
-	font-size:11px;
+	font-size:16px;
 	z-index:9;
 	font-color: #FFF;
-	filter: Glow(Color=FFF, Strength=2);
-	font-style: inherit;
-	color: #FFF;
+		
 }
-	}	
+.PrevNext {
+	font-family: "Century Gothic";
+	font-size: 13px;
+	font-style: normal;
+	color: #DCF746;
+	font-weight: normal;
+	letter-spacing: 3px;
+	font-variant: normal;
+	text-decoration: blink;
+	
+}
+
+		
 .PlaceHolder{
 	position:absolute;
 	width:900px;
