@@ -1,10 +1,16 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><style type="text/css">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<!--<meta http-equiv="refresh" content="0; URL=http://www.catherinelaplace.com/Gallery.html">-->
+
+<style type="text/css">
 .gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}.IconSpace {
 	font-size: xx-small;
 }
 
-</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
+</style><style type="text/css">
+@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}
+
+</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}</style>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=1200">
 <meta name="description" content="Cell portrait project:  A series of digital rendering of  immune cells">
@@ -18,10 +24,12 @@
 
 
 
-<style type="text/css"></style>
 
+
+<style type="text/css"></style>
+<script src="SpryAssets/SpryEffects.js" type="text/javascript"></script>
 <script language="JavaScript">
-<!-- 
+<!--
 var interval = 20000; 
 var random_display = 0;
 var image_dir = "Images/Cells/"
@@ -30,6 +38,8 @@ imageArray = new Array();
 imageArray[ImageNum++] = new imageItem(image_dir + "01.jpg");
 imageArray[ImageNum++] = new imageItem(image_dir + "02.jpg");
 imageArray[ImageNum++] = new imageItem(image_dir + "03.jpg");
+imageArray[ImageNum++] = new imageItem(image_dir + "04.jpg");
+imageArray[ImageNum++] = new imageItem(image_dir + "05.jpg");
 
 var number_of_image = imageArray.length;
 function imageItem(image_location) {
@@ -73,7 +83,12 @@ timerID = setTimeout(recur_call, interval);
 }
 
 
-//   -->
+//
+function MM_effectAppearFade(targetElement, duration, from, to, toggle)
+{
+	Spry.Effect.DoFade(targetElement, {duration: duration, from: from, to: to, toggle: toggle});
+}
+//-->
 </script>
 </head>
 
@@ -95,8 +110,15 @@ body {
     
   
   <!--CONTACTO -->
-  <a href="Index.html" target="_blank"><img src="Images/Cornerheader.png" width="195" height="181" /></a>
-    <div class="Title"> Cell Portraits
+<a href="Index.html" target="_self"><img src="Images/Cornerheader.png" width="195" height="181" /></a></a>
+   <div class="Homelink">
+   <table width="80" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><a href="Index.html" target="_self">Portfolio</a></td>
+  </tr>
+</table>
+</div>
+ <div class="Title"> Cell Portraits
 </div>
   <div class="CellPortraitstext" id="CellPortraitstext">
     <p>A series of digital cell "portraits" of immune cells. </p>
@@ -113,12 +135,12 @@ body {
  
 <table border=0 cellpadding=0 cellspacing=0>
 <tr>
-	<td class="td" align=center>
+	<td align=center class="td">
 	  <!--<p><a href="#" onClick="rotateImage('rImage')">> play slideshow</a>&nbsp;&nbsp;<a href="#" onClick="clearTimeout(timerID)">|| pause slideshow</a><br>-->
-    <a href="#" onClick="prevImage('rImage'); clearTimeout(timerID)"><< previous </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onClick="rotateImage('rImage'); clearTimeout(timerID)"> next >></a><br><br></td>
+    <a href="#" class="PrevNext" onClick="prevImage('rImage'); clearTimeout(timerID)" onmouseover="MM_effectAppearFade(this, 1000, 10, 100, false)"><< prev </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" class="PrevNext"  onClick="rotateImage('rImage'); clearTimeout(timerID)" onmouseover="MM_effectAppearFade(this, 1000, 10, 100, false)"> next >></a><br><br></td>
 </tr>
 <tr>
-	<td class="td" align=center><img name="rImage" src="Images/Cells/01.jpg" width=880 height=880 border=0>
+	<td class="td" align=center><img name="rImage" src="Images/Cells/01.jpg" width=750 height=750 border=0>
 <p></td>
 </tr>
 </table>
